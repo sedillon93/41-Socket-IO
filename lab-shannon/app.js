@@ -10,7 +10,12 @@ app.use(express.static('./public'));
 
 io.on('connection', (socket) => {
   console.log(`${socket.id} joined`);
+  
+  socket.on('disconnect', () => {
+    console.log(`${socket.id} left`);
+  });
 });
+
 
 http.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
