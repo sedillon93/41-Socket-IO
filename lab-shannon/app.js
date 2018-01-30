@@ -12,7 +12,7 @@ let client = {};
 io.on('connection', (socket) => {
   console.log(`${socket.id} joined`);
   client[socket.id] = {};
-  client[socket.id].username = '';
+  client[socket.id].username = 'anonymous';
 
   socket.on('disconnect', () => {
     console.log(`${socket.id} left`);
