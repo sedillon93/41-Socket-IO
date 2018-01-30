@@ -6,15 +6,16 @@
   </head>
   <body>
     <form id='usernameForm'>
-      <input type='text'/>
+      <input id='username' type='text'/>
       <button type='submit'>Choose Username</button>
     </form>
     <form id='messageForm'>
-      <input type='text'/>
+      <input id='message' type='text'/>
       <button type='submit'>Send Message</button>
     </form>
     <section id="messageBoard"></section>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/model/chatMessage.js"></script>
     <script src="/main.js"></script>
   </body>
 </html>

@@ -1,8 +1,8 @@
 class chatMessage{
-  constructor(username, message, timestamp){
-    this.username = username;
-    this.message = message;
-    this.timestamp = timestamp;
+  constructor(data){
+    this.username = data.username;
+    this.message = data.message;
+    this.timestamp = data.timestamp;
   }
 
   render(parentElement){
@@ -11,9 +11,9 @@ class chatMessage{
     let message = document.createElement('p');
     let timestamp = document.createElement('span');
 
-    username.textContent(this.username);
-    message.textContent(this.message);
-    timestamp.textContent(this.timestamp);
+    username.textContent = this.username;
+    message.textContent = this.message;
+    timestamp.textContent = this.timestamp;
 
     container.appendChild(username);
     container.appendChild(message);
