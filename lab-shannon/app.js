@@ -20,7 +20,18 @@ io.on('connection', (socket) => {
 
   socket.on('send-message', (data) => {
     data.username = client[socket.id].username;
-    data.timestamp = new Date();
+    let time = new Date();
+    let minute = time.getMinutes();
+    let hour = Math.abs(time.getHours() - 12);
+    let interval;
+    if(time.getHours() - 12 < 0){
+      interval = 'am';
+    }else{
+      interval = 'pm';
+    }
+    let day = time.getDate();
+    let month = time.getMonth() + 1;
+    data.timestamp = `${hour}:${minute} ${interval} ${month}/${day}`;
     io.emit('incoming-message', data);
   });
 
