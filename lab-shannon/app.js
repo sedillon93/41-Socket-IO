@@ -11,13 +11,21 @@ let client = {};
 
 io.on('connection', (socket) => {
   console.log(`${socket.id} joined`);
+  client[socket.id] = {};
+  client[socket.id].username = '';
 
   socket.on('disconnect', () => {
     console.log(`${socket.id} left`);
   });
 
   socket.on('send-message', (data) => {
+    data.username = client[socket.id].username;
+    data.timestamp = new Date();
     io.emit('incoming-message', data);
+  });
+
+  socket.on('set-username', (data) => {
+    client[socket.id].username = data.username;
   });
 });
 

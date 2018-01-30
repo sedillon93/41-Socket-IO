@@ -21,7 +21,6 @@ messageForm.addEventListener('submit', (event) => {
 });
 
 socket.on('incoming-message', (data) => {
-  console.log(data, `is the data`);
   let newMessage = new chatMessage(data);  //eslint-disable-line
   newMessage.render(messageBoard);
 });
