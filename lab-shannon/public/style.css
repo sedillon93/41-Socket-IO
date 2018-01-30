@@ -2,24 +2,6 @@ body {
   background: linear-gradient(to bottom, rgba(102, 255, 204, .5) 0%, rgba(255, 255, 204,.5) 100%) no-repeat center center fixed;
 }
 
-#usernameForm {
-  position: fixed;
-  left: 45%;
-  top: 10%;
-}
-
-#messageForm {
-  position: fixed;
-  left: 45%;
-  top: 15%;
-}
-
-#messageBoard {
-  position: fixed;
-  left: 5%;
-  top: 20%;
-}
-
 #message {
   font-weight: bold;
 }
