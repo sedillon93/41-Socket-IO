@@ -8,6 +8,7 @@ class chatMessage{
   render(parentElement){
     let container = document.createElement('div');
     let username = document.createElement('span');
+    username.setAttribute('id', 'message');
     let timestamp = document.createElement('span');
     let message = document.createElement('span');
 
